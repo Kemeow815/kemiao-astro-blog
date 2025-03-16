@@ -66,7 +66,7 @@ $(document).ready(function() {
         // }
 
         var topDistance = document.documentElement.scrollTop;// menu.offset().top;
-
+        console.log(topDistance)
         // hide only the navigation links on desktop
         const distanceLimit = 100;
         if (!nav.is(":visible") && topDistance < distanceLimit) {
