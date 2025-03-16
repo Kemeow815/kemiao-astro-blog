@@ -98,17 +98,6 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: cactus
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://github.com/Ouzr0107/blog.git
-  branch: main
-  message: [网页更新于: {{ now('YYYY-MM-DD HH:mm:ss') }}]
-
-plugins:
-  hexo-generator-feed
-
 theme_config:
   colorscheme: white
 
