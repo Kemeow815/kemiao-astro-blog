@@ -114,3 +114,7 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+
+disqus:
+  enabled: true
+  shortname: orz0107
