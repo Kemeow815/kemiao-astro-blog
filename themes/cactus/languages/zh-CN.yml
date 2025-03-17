@@ -32,7 +32,7 @@ post:
   mobile:
     menu: 菜单
     toc: 目录
-    back_to_top: 返回顶部
+    back_to_top: ' '
     share: 分享
 
 search:
