@@ -20,7 +20,6 @@ nav:
   tag: /tags/
   search: /search/
   projects: https://github.com/Ouzr0107
-  rss: /atom.xml
 
 
 # Links to your social media accounts.
@@ -42,10 +41,9 @@ social_links:
   -
     icon: mail
     link: mailto:zhuo0107@foxmail.com
-  # -
-  #   icon: mastodon
-  #   label: mastodon.social
-  #   link: https://mastodon.social/@alice
+  -
+    icon: rss
+    link: /atom.xml
   # -
   #   icon: mastodon
   #   label: fosstodon.org
