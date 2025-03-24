@@ -99,7 +99,7 @@ ignore:
 theme: cactus
 
 theme_config:
-  colorscheme: white
+  colorscheme: classic
 
 feed:
   enable: true
