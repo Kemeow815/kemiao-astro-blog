@@ -1,0 +1,41 @@
+# Blog config
+keywords: Blog,Article
+author: Your Name
+description: A So Simple Blog
+defaultTheme: light
+favicon: /images/logo.png
+
+# Nav menu
+menu:
+  Home: /
+  Archives: /archives
+  Tags: /tags
+  About: /about
+  Links: /links
+  Search: /search
+  Dark/Light Mode: javascript:SoSimple.darkLightToggle()
+
+toc_max_depth: 6
+
+footer:
+  text:
+  html:
+  enable_powered_by: true
+
+style:
+  post_excerpt:
+    summary_mode: false # if true, use `summary` of your post meta to generate summary
+  post_meta:
+    date_format: 'YYYY-MM-DD'
+    show_icon: true
+
+comment:
+  enable: # gitalk
+  gitalk:
+    clientID: string
+    clientSecret: string
+    repo: string,
+    owner: string,
+    admin:
+      - string[],
+    distractionFreeMode: false
