@@ -1,5 +1,0 @@
----
-title: search
-date: 2025-03-16 15:37:39
-type: search
----
