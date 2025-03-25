@@ -59,8 +59,8 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
           </li>
         ) : (
           <li>
-            <a href={`/${breadcrumb}/`} class="capitalize opacity-70">
-              {breadcrumb === 'tags' ? '标签' : decodeURIComponent(breadcrumb)}
+            <a href={`${index === 1 ? '/tags' : ''}/${breadcrumb === '标签' ? 'tags' : decodeURIComponent(breadcrumb)}/`} class="capitalize opacity-70">
+              {decodeURIComponent(breadcrumb)}
             </a>
             <span aria-hidden="true">&raquo;</span>
           </li>
