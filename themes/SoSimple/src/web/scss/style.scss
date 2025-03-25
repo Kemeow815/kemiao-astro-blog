@@ -1,0 +1,36 @@
+// @charset 'UTF-8';
+
+i.fa {
+  font-size: 80%;
+  color: var(--primary-low-mid);
+}
+
+body {
+  margin: auto;
+  max-width: 780px;
+}
+
+.post-container {
+  .post-meta {
+    font-size: 0.9em;
+  }
+  &.post-full .post-meta {
+    margin-top: 1em;
+  }
+  &.post-excerpt,
+  &.index-post {
+    margin-bottom: 3em;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+a.header-anchor {
+  opacity: 0.5;
+  font-size: 80%;
+}
+
+@import './print.scss';
