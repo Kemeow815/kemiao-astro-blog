@@ -1,0 +1,37 @@
+<div id="giscus-comments"></div>
+
+<script is:inline>
+// 客户端动态加载脚本
+function loadGiscus() {
+  // 获取当前主题
+  const theme = localStorage.getItem("theme") === "dark" ? "dark" : "light";
+  
+  // 创建 script 元素
+  const script = document.createElement("script");
+  script.src = "https://giscus.app/client.js";
+  script.dataset.repo = "Ouzr0107/blog";
+  script.dataset.repoId = "R_kgDOOJWcnQ";
+  script.dataset.category = "Announcements";
+  script.dataset.categoryId = "DIC_kwDOOJWcnc4Codjf";
+  script.dataset.mapping = "title";
+  script.dataset.strict = "0";
+  script.dataset.reactionsEnabled = "1";
+  script.dataset.emitMetadata = "0";
+  script.dataset.inputPosition = "top";
+  script.dataset.theme = theme; // 动态设置主题
+  script.dataset.lang = "zh-CN";
+  script.dataset.loading = "lazy";
+  script.crossOrigin = "anonymous";
+  script.async = true;
+
+  // 清空容器并插入新脚本
+  const container = document.getElementById("giscus-comments");
+  container.innerHTML = "";
+  container.appendChild(script);
+}
+
+// 页面加载时加载评论
+document.addEventListener('astro:page-load', loadGiscus);
+document.addEventListener('DOMContentLoaded', loadGiscus);
+document.addEventListener('astro:after-swap', loadGiscus);
+</script>
