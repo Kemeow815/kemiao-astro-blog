@@ -47,6 +47,22 @@ const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
         element: "#pagefind-search",
         showSubResults: true,
         showImages: false,
+        autofocus: true,
+        translations: {
+          placeholder: "搜索",
+          clear_search: "清空",
+          load_more: "加载更多",
+          search_label: "在这个网站搜索",
+          filters_label: "筛选",
+          zero_results: "无 [SEARCH_TERM] 相关的结果",
+          many_results: "已找到 [COUNT] 个有关 [SEARCH_TERM] 的结果",
+          one_result: "已找到 [COUNT] 个有关 [SEARCH_TERM] 的结果",
+          alt_search:
+            "无 [SEARCH_TERM] 相关的结果。现在展示有关 [DIFFERENT_TERM] 的结果",
+          search_suggestion:
+            "无 [SEARCH_TERM] 相关的结果。建议使用以下关键字搜索：",
+          searching: "搜索 [SEARCH_TERM] 中……",
+        },
         processTerm: function (term: string) {
           params.set("q", term); // Update the `q` parameter in the URL
           history.replaceState(history.state, "", "?" + params.toString()); // Push the new URL without reloading
