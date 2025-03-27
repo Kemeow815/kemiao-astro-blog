@@ -11,7 +11,7 @@ export const SOCIALS = [
   {
     name: "Github",
     href: "https://github.com/Ouzr0107",
-    linkTitle: ` ${SITE.title} 的 github 页面`,
+    linkTitle: `我的 github 页面`,
     icon: IconGitHub,
   },
   // {

@@ -28,11 +28,13 @@
   /* ===== Code Blocks & Syntax Highlighting ===== */
   pre:has(code) {
     @apply border border-border;
+    font-family: "Fira Code";
   }
 
   .prose code,
   .prose blockquote {
     @apply break-words;
+    font-family: "Fira Code";
   }
 
   .prose table code {
