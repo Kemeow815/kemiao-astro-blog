@@ -26,12 +26,10 @@ function loadGiscus() {
 
   // 清空容器并插入新脚本
   const container = document.getElementById("giscus-comments");
-  container.innerHTML = " ";
+  container.innerHTML = "giscus comments";
   container.appendChild(script);
 }
 
 // 页面加载时加载评论
-document.addEventListener('astro:page-load', loadGiscus);
-document.addEventListener('DOMContentLoaded', loadGiscus);
 document.addEventListener('astro:after-swap', loadGiscus);
 </script>
