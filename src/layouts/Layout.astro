@@ -68,6 +68,17 @@ const structuredData = {
     <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" type="text/css">
 
+    <!-- 邮箱加密支持 -->
+    <script>
+      document.addEventListener('astro:page-load', () => {
+        if (window.cfemail) {
+          document.querySelectorAll('[data-cfemail]').forEach(el => {
+            el.textContent = window.cfemail(el.getAttribute('data-cfemail'));
+          });
+        }
+      });
+    </script>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
