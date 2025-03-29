@@ -140,7 +140,10 @@ const structuredData = {
       document.addEventListener('astro:page-load', () => {
         if (window.cfemail) {
           document.querySelectorAll('[data-cfemail]').forEach(el => {
-            el.textContent = window.cfemail!(el.getAttribute('data-cfemail')!);
+            const encoded = el.getAttribute('data-cfemail');
+            if (encoded) {
+              el.textContent = window.cfemail(encoded);
+            }
           });
         }
       });
