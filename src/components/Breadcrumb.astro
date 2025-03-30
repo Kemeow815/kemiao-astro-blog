@@ -8,21 +8,24 @@ const breadcrumbList = currentUrlPath.split("/").slice(1);
 
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
-switch(breadcrumbList[0]) {
-  case 'posts':
-    breadcrumbList.splice(0, 2, `文章（第 ${breadcrumbList[1]  || 1} 页）`);
+switch (breadcrumbList[0]) {
+  case "posts":
+    breadcrumbList.splice(0, 2, `文章（第 ${breadcrumbList[1] || 1} 页）`);
     break;
-  case 'tags':
+  case "tags":
     breadcrumbList.splice(0, 1, `标签`);
     break;
-  case 'about':
+  case "about":
     breadcrumbList.splice(0, 1, `关于`);
     break;
-  case 'archives':
+  case "archives":
     breadcrumbList.splice(0, 1, `归档`);
     break;
-  case 'search':
+  case "search":
     breadcrumbList.splice(0, 1, `搜索`);
+    break;
+  case "links":
+    breadcrumbList.splice(0, 1, `友链`);
     break;
 }
 
@@ -59,7 +62,10 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
           </li>
         ) : (
           <li>
-            <a href={`${index === 1 ? '/tags' : ''}/${breadcrumb === '标签' ? 'tags' : decodeURIComponent(breadcrumb)}/`} class="capitalize opacity-70">
+            <a
+              href={`${index === 1 ? "/tags" : ""}/${breadcrumb === "标签" ? "tags" : decodeURIComponent(breadcrumb)}/`}
+              class="capitalize opacity-70"
+            >
               {decodeURIComponent(breadcrumb)}
             </a>
             <span aria-hidden="true">&raquo;</span>

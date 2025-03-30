@@ -72,3 +72,18 @@ export const SHARE_LINKS = [
     icon: IconMail,
   },
 ] as const;
+
+export const LINKS = [
+  // {
+  //   Name: "Arthals' ink",
+  //   Desc: "所见高山远木，阔云流风；所幸岁月盈余，了无拘束",
+  //   Link: "https://arthals.ink/",
+  //   Avatar: "https://cdn.arthals.ink/Arthals.png",
+  // },
+  {
+    name: "Arthals' ink",
+    desc: "所见高山远木，阔云流风；所幸岁月盈余，了无拘束",
+    link: "https://arthals.ink/",
+    avatar: "https://cdn.arthals.ink/Arthals.png",
+  },
+] as const;

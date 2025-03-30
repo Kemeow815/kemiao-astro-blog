@@ -1,0 +1,63 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { LINKS } from "@/constants";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import { SITE } from "@/config";
+import PostComments from "@/components/PostComments.astro";
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`${frontmatter.title} | ${SITE.title}`}>
+  <Header />
+  <Breadcrumb />
+  <main id="main-content">
+    <section id="links">
+      <h1 class="text-2xl font-bold tracking-wider sm:text-3xl">
+        {frontmatter.title}
+      </h1>
+      <ul role="list" class="mb-10 grid grid-cols-2 gap-10 pt-[20px]">
+        {
+          LINKS.map(link => (
+            <li class="border-b-2 hover:border-accent">
+              <a href={link.link} target="_blank">
+                <div class="mx-auto flex w-full max-w-[1.5xl] flex-col">
+                  <div class="relative flex w-full">
+                    <div class="align-center mb-2 flex h-min max-w-full items-center rounded-lg">
+                      <span class="relative flex h-10 min-h-[68px] w-10 min-w-[68px] shrink-0 overflow-hidden rounded-full">
+                        <img
+                          class="aspect-square h-full w-full"
+                          src={link.avatar}
+                        />
+                      </span>
+                      <div>
+                        <p class="pl-4 leading-[100%] font-bold">{link.name}</p>
+                        <p class="pl-4 text-sm font-medium text-zinc-500 md:mt-2 md:text-base dark:text-zinc-400">
+                          {link.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="prose mb-28 prose-img:border-0 max-w-3xl">
+        <slot />
+      </div>
+      <PostComments />
+    </section>
+  </main>
+  <Footer />
+</Layout>

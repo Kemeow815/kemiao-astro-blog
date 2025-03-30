@@ -2,8 +2,8 @@ export const SITE = {
   website: "https://imwzj.uk/", // replace this with your deployed domain
   author: "王小明",
   profile: "https://imwzj.uk/",
-  desc: "感觉不如 Hexo。",
-  title: "Blog",
+  desc: "乱七八糟就像我一样",
+  title: "王小明的杂物堆",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
