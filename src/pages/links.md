@@ -10,10 +10,10 @@ title: "友链"
 若要申请本站的友链，请按照以下格式发布评论区：
 
 ```
-名称：CWorld Site
-简介：求知若愚，虚怀若谷
-链接：https://cworld0.com/
-图标：https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200
+名称：王小明的杂物堆
+简介：乱七八糟就像我一样
+链接：https://imwzj.uk/
+图标：https://avatars.githubusercontent.com/u/87957461
 ```
 
 此外有关申请说明：
