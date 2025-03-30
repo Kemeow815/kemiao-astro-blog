@@ -81,6 +81,12 @@ export const LINKS = [
   //   Avatar: "https://cdn.arthals.ink/Arthals.png",
   // },
   {
+    name: "Stark's",
+    desc: "Personal website and blog of Charles Stark",
+    link: "https://c12k.dev",
+    avatar: "https://avatars.githubusercontent.com/u/69138022",
+  },
+  {
     name: "Arthals' ink",
     desc: "所见高山远木，阔云流风；所幸岁月盈余，了无拘束",
     link: "https://arthals.ink/",
