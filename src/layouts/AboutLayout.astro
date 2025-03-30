@@ -4,7 +4,6 @@ import Footer from "@/components/Footer.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Layout from "./Layout.astro";
 import { SITE } from "@/config";
-import PostComments from "@/components/PostComments.astro";
 
 export interface Props {
   frontmatter: {
@@ -23,7 +22,7 @@ const { frontmatter } = Astro.props;
     <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
       <slot />
-      <PostComments />
+      <div id="giscus-comments"></div>
     </section>
   </main>
   <Footer />

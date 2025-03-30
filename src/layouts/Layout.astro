@@ -65,8 +65,16 @@ const structuredData = {
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- 加载字体 -->
-    <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" type="text/css">
+    <link
+      rel="stylesheet"
+      href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
+      type="text/css"
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
@@ -136,6 +144,7 @@ const structuredData = {
   <body>
     <slot />
   </body>
+  <script is:inline src="/mail-comments.js"></script>
 </html>
 
 <style>

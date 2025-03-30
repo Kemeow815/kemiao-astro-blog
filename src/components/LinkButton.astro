@@ -1,4 +1,6 @@
 ---
+import { nan } from 'astro:schema';
+
 export interface Props {
   id?: string;
   href: string;
@@ -6,6 +8,7 @@ export interface Props {
   ariaLabel?: string;
   title?: string;
   disabled?: boolean;
+  name?: string;
 }
 
 const {
@@ -15,6 +18,7 @@ const {
   ariaLabel,
   title,
   disabled = false,
+  name,
 } = Astro.props;
 ---
 
@@ -31,6 +35,7 @@ const {
   ) : (
     <a
       id={id}
+      name={name}
       {href}
       class:list={["group inline-block hover:text-accent", className]}
       aria-label={ariaLabel}

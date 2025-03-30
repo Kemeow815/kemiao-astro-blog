@@ -28,8 +28,8 @@ export const SOCIALS = [
   // },
   {
     name: "Mail",
-    href: "mailto:zhuo0107@foxmail.com",
-    linkTitle: `联系我请发送邮件到 ${SITE.title}`,
+    href: "",
+    linkTitle: `向我发送邮件`,
     icon: IconMail,
   },
 ] as const;
