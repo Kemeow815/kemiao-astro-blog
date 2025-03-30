@@ -86,4 +86,10 @@ export const LINKS = [
     link: "https://arthals.ink/",
     avatar: "https://cdn.arthals.ink/Arthals.png",
   },
+  {
+    name: "CWorld Site",
+    desc: "求知若愚，虚怀若谷",
+    link: "https://cworld0.com/",
+    avatar: "https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200",
+  },
 ] as const;
