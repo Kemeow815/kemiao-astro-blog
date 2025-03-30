@@ -4,16 +4,15 @@ const primaryColorScheme = ""; // "light" | "dark"
 const currentTheme = localStorage.getItem("theme");
 
 function getPreferTheme() {
-  // return theme value in local storage if it is set
   if (currentTheme) return currentTheme;
+
+  // return theme value in local storage if it is set
 
   // return primary color scheme if it is set
   if (primaryColorScheme) return primaryColorScheme;
 
   // return user device's prefer color scheme
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return getSystemTheme();
 }
 
 let themeValue = getPreferTheme();
@@ -23,8 +22,18 @@ function setPreference() {
   reflectPreference();
 }
 
+function getSystemTheme() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function getThemeMode() {
+  return themeValue === "auto" ? getSystemTheme() : themeValue;
+}
+
 function reflectPreference() {
-  document.firstElementChild.setAttribute("data-theme", themeValue);
+  document.firstElementChild.setAttribute("data-theme", getThemeMode());
 
   document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
 
@@ -48,9 +57,43 @@ function reflectPreference() {
   }
 }
 
-function changeGiscusTheme() {
-  const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+// 根据 name 属性更新图标显示
+function updateIcons() {
+  const themeBtn = document.getElementById('theme-btn');
+  const icons = {
+      moon: themeBtn.querySelector('#icon-moon'),
+      sun: themeBtn.querySelector('#icon-sun'),
+      system: themeBtn.querySelector('#icon-system'),
+  };
 
+  console.log(themeBtn, icons.moon, icons.sun, icons.system);
+
+  if (!themeBtn
+      || !icons.moon
+      || !icons.sun
+      || !icons.system) {
+      return;
+  }
+  // 重置所有图标状态
+  Object.values(icons).forEach((icon) => {
+      icon.classList.remove('scale-100');
+      icon.classList.add('scale-0');
+  });
+
+  // 根据 name 显示对应图标
+  if (themeValue === 'dark') {
+      icons.moon.classList.remove('scale-0');
+      icons.moon.classList.add('scale-100');
+  } else if (themeValue === 'light') {
+      icons.sun.classList.remove('scale-0');
+      icons.sun.classList.add('scale-100');
+  } else if (themeValue === 'auto') {
+      icons.system.classList.remove('scale-0');
+      icons.system.classList.add('scale-100');
+  }
+}
+
+function changeGiscusTheme() {
   function sendMessage(message) {
     const iframe = document.querySelector('iframe.giscus-frame');
     if (!iframe) return;
@@ -59,7 +102,7 @@ function changeGiscusTheme() {
 
   sendMessage({
     setConfig: {
-      theme: theme
+      theme: getThemeMode(),
     }
   });
 };
@@ -74,9 +117,12 @@ window.onload = () => {
 
     // now this script can find and listen for clicks on the control
     document.querySelector("#theme-btn")?.addEventListener("click", () => {
-      themeValue = themeValue === "light" ? "dark" : "light";
+      themeValue = themeValue === "light" ? "dark" : themeValue === "dark" ? "auto" : "light";
       setPreference();
+      updateIcons();
     });
+
+    updateIcons();
   }
 
   setThemeFeature();
@@ -89,6 +135,7 @@ window.onload = () => {
 window
   .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", ({ matches: isDark }) => {
-    themeValue = isDark ? "dark" : "light";
+    themeValue = themeValue === "auto" ? "auto" : isDark ? "dark" : "light";
     setPreference();
+    updateIcons();
   });
