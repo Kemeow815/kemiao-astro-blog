@@ -61,35 +61,33 @@ function reflectPreference() {
 function updateIcons() {
   const themeBtn = document.getElementById('theme-btn');
   const icons = {
-      moon: themeBtn.querySelector('#icon-moon'),
-      sun: themeBtn.querySelector('#icon-sun'),
-      system: themeBtn.querySelector('#icon-system'),
+    moon: themeBtn.querySelector('#icon-moon'),
+    sun: themeBtn.querySelector('#icon-sun'),
+    system: themeBtn.querySelector('#icon-system'),
   };
 
-  console.log(themeBtn, icons.moon, icons.sun, icons.system);
-
   if (!themeBtn
-      || !icons.moon
-      || !icons.sun
-      || !icons.system) {
-      return;
+    || !icons.moon
+    || !icons.sun
+    || !icons.system) {
+    return;
   }
   // 重置所有图标状态
   Object.values(icons).forEach((icon) => {
-      icon.classList.remove('scale-100');
-      icon.classList.add('scale-0');
+    icon.classList.remove('scale-100');
+    icon.classList.add('scale-0');
   });
 
   // 根据 name 显示对应图标
   if (themeValue === 'dark') {
-      icons.moon.classList.remove('scale-0');
-      icons.moon.classList.add('scale-100');
+    icons.moon.classList.remove('scale-0');
+    icons.moon.classList.add('scale-100');
   } else if (themeValue === 'light') {
-      icons.sun.classList.remove('scale-0');
-      icons.sun.classList.add('scale-100');
+    icons.sun.classList.remove('scale-0');
+    icons.sun.classList.add('scale-100');
   } else if (themeValue === 'auto') {
-      icons.system.classList.remove('scale-0');
-      icons.system.classList.add('scale-100');
+    icons.system.classList.remove('scale-0');
+    icons.system.classList.add('scale-100');
   }
 }
 
