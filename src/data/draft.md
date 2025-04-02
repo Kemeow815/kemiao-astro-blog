@@ -20,3 +20,14 @@ Here are some recommendations, tips & ticks for creating new posts in AstroPaper
 ## Table of contents
 
 ![something](@/assets/images/example.jpg)
+
+
+
+## JS 获取 ISO 8601 时间
+
+```javascript
+var d = new Date();
+d.setHours(d.getHours(), d.getMinutes() - d.getTimezoneOffset());
+console.log(d.toISOString())
+```
+
