@@ -4,7 +4,7 @@ function loadGiscus() {
     if (!container) return;
 
     // 获取当前主题
-    const theme = localStorage.getItem("theme") === "dark" ? "dark" : "light";
+    const theme = getThemeMode();
 
     // 创建 script 元素
     const script = document.createElement("script");
