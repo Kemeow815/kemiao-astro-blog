@@ -5,6 +5,11 @@ import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import { SITE } from "./src/config";
 
+function newSummarizer(str: string) {
+  console.log(str);
+  return '展开 ' + str;
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -16,7 +21,7 @@ export default defineConfig({
   ],
 
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    remarkPlugins: [[remarkToc, { heading: '目录' }], [remarkCollapse, { test: "目录", summary: newSummarizer }]],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "night-owl" },
