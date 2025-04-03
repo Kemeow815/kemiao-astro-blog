@@ -57,38 +57,45 @@ function reflectPreference() {
   }
 }
 
-// 根据 name 属性更新图标显示
-function updateIcons() {
-  const themeBtn = document.getElementById('theme-btn');
-  const icons = {
-    moon: themeBtn.querySelector('#icon-moon'),
-    sun: themeBtn.querySelector('#icon-sun'),
-    system: themeBtn.querySelector('#icon-system'),
-  };
-
-  if (!themeBtn
-    || !icons.moon
-    || !icons.sun
-    || !icons.system) {
-    return;
-  }
-  // 重置所有图标状态
-  Object.values(icons).forEach((icon) => {
-    icon.classList.remove('scale-100');
-    icon.classList.add('scale-0');
+function displayEmail() {
+  const mailLinks = document.getElementsByName("mail");
+  if (!mailLinks) return;
+  const user = "zhuo0107"; // 邮箱用户名部分
+  const domain = "foxmail.com"; // 域名部分
+  mailLinks.forEach(mailLink => {
+    mailLink.setAttribute("href", `mailto:${user}@${domain}`);
   });
+}
 
-  // 根据 name 显示对应图标
-  if (themeValue === 'dark') {
-    icons.moon.classList.remove('scale-0');
-    icons.moon.classList.add('scale-100');
-  } else if (themeValue === 'light') {
-    icons.sun.classList.remove('scale-0');
-    icons.sun.classList.add('scale-100');
-  } else if (themeValue === 'auto') {
-    icons.system.classList.remove('scale-0');
-    icons.system.classList.add('scale-100');
-  }
+function loadGiscus() {
+  const container = document.getElementById("giscus-comments");
+
+  if (!container) return;
+
+  // 获取当前主题
+  const theme = getThemeMode();
+
+  // 创建 script 元素
+  const script = document.createElement("script");
+  script.src = "https://giscus.app/client.js";
+  script.dataset.repo = "Ouzr0107/blog";
+  script.dataset.repoId = "R_kgDOOJWcnQ";
+  script.dataset.category = "Announcements";
+  script.dataset.categoryId = "DIC_kwDOOJWcnc4Codjf";
+  script.dataset.mapping = "title";
+  script.dataset.strict = "0";
+  script.dataset.reactionsEnabled = "1";
+  script.dataset.emitMetadata = "0";
+  script.dataset.inputPosition = "top";
+  script.dataset.theme = theme; // 动态设置主题
+  script.dataset.lang = "zh-CN";
+  script.dataset.loading = "lazy";
+  script.crossOrigin = "anonymous";
+  script.async = true;
+
+  // 清空容器并插入新脚本
+  container.innerHTML = "";
+  container.appendChild(script);
 }
 
 function changeGiscusTheme() {
@@ -117,16 +124,23 @@ window.onload = () => {
     document.querySelector("#theme-btn")?.addEventListener("click", () => {
       themeValue = themeValue === "light" ? "dark" : themeValue === "dark" ? "auto" : "light";
       setPreference();
-      updateIcons();
     });
-
-    updateIcons();
   }
 
   setThemeFeature();
 
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", setThemeFeature);
+
+  loadGiscus();
+
+  // 页面加载时加载评论
+  document.addEventListener("astro:after-swap", loadGiscus);
+
+  displayEmail();
+
+  // 页面加载时调用
+  document.addEventListener("astro:after-swap", displayEmail);
 };
 
 // sync with system changes
@@ -135,5 +149,4 @@ window
   .addEventListener("change", ({ matches: isDark }) => {
     themeValue = themeValue === "auto" ? "auto" : isDark ? "dark" : "light";
     setPreference();
-    updateIcons();
   });
