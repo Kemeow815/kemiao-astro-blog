@@ -52,8 +52,6 @@ function reflectPreference() {
     document
       .querySelector("meta[name='theme-color']")
       ?.setAttribute("content", bgColor);
-
-    changeGiscusTheme();
   }
 }
 
@@ -124,6 +122,7 @@ window.onload = () => {
     document.querySelector("#theme-btn")?.addEventListener("click", () => {
       themeValue = themeValue === "light" ? "dark" : themeValue === "dark" ? "auto" : "light";
       setPreference();
+      changeGiscusTheme();
     });
   }
 
@@ -149,4 +148,5 @@ window
   .addEventListener("change", ({ matches: isDark }) => {
     themeValue = themeValue === "auto" ? "auto" : isDark ? "dark" : "light";
     setPreference();
+    changeGiscusTheme();
   });
