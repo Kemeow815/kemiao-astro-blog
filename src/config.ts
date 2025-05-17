@@ -1,7 +1,7 @@
 export const SITE = {
-  website: "https://myblogs.kemiaosw.top/", // replace this with your deployed domain
+  website: "https://myblogs.kemiao.online/", // replace this with your deployed domain
   author: "克喵爱吃卤面",
-  profile: "https://myblogs.kemiaosw.top/",
+  profile: "https://myblogs.kemiao.online/",
   desc: "愿你看清一切真相后，依旧热爱你的家人和朋友。",
   title: "喵落阁",
   ogImage: "touxiang.jpg",
