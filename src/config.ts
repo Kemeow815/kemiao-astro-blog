@@ -1,10 +1,10 @@
 export const SITE = {
-  website: "https://imwzj.uk/", // replace this with your deployed domain
-  author: "王小明",
-  profile: "https://imwzj.uk/",
-  desc: "乱七八糟就像我一样",
-  title: "王小明的杂物堆",
-  ogImage: "astropaper-og.jpg",
+  website: "http://blogs.kemiaosw.top/", // replace this with your deployed domain
+  author: "克喵爱吃卤面",
+  profile: "http://blogs.kemiaosw.top/",
+  desc: "愿你看清一切真相后，依旧热爱你的家人和朋友。",
+  title: "喵落阁",
+  ogImage: "touxiang.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
