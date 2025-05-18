@@ -1,24 +1,52 @@
-import IconMail from "@/assets/icons/IconMail.svg";
-import IconGitHub from "@/assets/icons/IconGitHub.svg";
-import IconBrandX from "@/assets/icons/IconBrandX.svg";
+import IconMail from "@/assets/icons/mail.svg";
+import IconBrandX from "@/assets/icons/X.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
-import IconTelegram from "@/assets/icons/IconTelegram.svg";
+import IconTelegram from "@/assets/icons/telegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
+import IconGithub from "@/assets/icons/github.svg";
+import IconMusic from "@/assets/icons/music.svg";
+import IconBilibili from "@/assets/icons/bilibili.svg";
+import IconQQ from "@/assets/icons/qq.svg";
+import { SITE } from "./config";
 
 export const SOCIALS = [
   {
     name: "Github",
-    href: "https://github.com/Ouzr0107",
+    href: "https://github.com/Kemeow815",
     linkTitle: `我的 github 页面`,
-    icon: IconGitHub,
+    icon: IconGithub,
   },
-  // {
-  //   name: "X",
-  //   href: "https://x.com/username",
-  //   linkTitle: `${SITE.title} on X`,
-  //   icon: IconBrandX,
-  // },
+  {
+    name: "X",
+    href: "https://x.com/kemiaosw",
+    linkTitle: `${SITE.title} on X`,
+    icon: IconBrandX,
+  },
+  {
+    name: "Telegram",
+    href: "https://t.me/KemiaoJun",
+    linkTitle: `${SITE.title} on Telegram`,
+    icon: IconTelegram,
+  },
+  {
+    name: "网易云音乐",
+    href: "https://music.163.com/#/playlist?id=13681647281",
+    linkTitle: `${SITE.title} on 网易云`,
+    icon: IconMusic,
+  },
+  {
+    name: "哔哩哔哩",
+    href: "https://space.bilibili.com/3546643173477234/",
+    linkTitle: `${SITE.title} on 哔哩哔哩`,
+    icon: IconBilibili,
+  },
+  {
+    name: "QQ",
+    href: "https://qm.qq.com/q/m8FW8Y6TkY",
+    linkTitle: `${SITE.title} on QQ`,
+    icon: IconQQ,
+  },
   // {
   //   name: "LinkedIn",
   //   href: "https://www.linkedin.com/in/username/",
@@ -27,7 +55,7 @@ export const SOCIALS = [
   // },
   {
     name: "Mail",
-    href: "",
+    href: "mailto:me@kemiaosw.top",
     linkTitle: `向我发送邮件`,
     icon: IconMail,
   },
@@ -90,6 +118,12 @@ export const LINKS = [
     desc: "所见高山远木，阔云流风；所幸岁月盈余，了无拘束",
     link: "https://arthals.ink/",
     avatar: "https://cdn.arthals.ink/Arthals.png",
+  },
+  {
+    name: "Wallleap",
+    desc: "Luwang's blog",
+    link: "https://myblog.wallleap.cn/",
+    avatar: "https:////gravatar.wallleap.cn/avatar/be1ccdcf025a92b98a92e331e1b3662a?size=256",
   },
   {
     name: "CWorld Site",

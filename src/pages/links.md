@@ -10,10 +10,10 @@ title: "友链"
 若要申请本站的友链，请按照以下格式发布评论区：
 
 ```
-名称：王小明的杂物堆
-简介：乱七八糟就像我一样
-链接：https://imwzj.uk/
-图标：https://avatars.githubusercontent.com/u/87957461
+名称：喵落阁
+简介：愿你看清一切真相后，依旧热爱你的家人和朋友。
+链接：https://myblogs.kemiao.online/
+图标：https://cn.cravatar.com/avatar/7614B285E795F21E780247019C4E15C4?size=256
 ```
 
 此外有关申请说明：
